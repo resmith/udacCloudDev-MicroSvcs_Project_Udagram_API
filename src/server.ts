@@ -12,6 +12,9 @@ import {V0_FEED_MODELS, V0_USER_MODELS} from './controllers/v0/model.index';
 (async () => {
   console.log("Server.ts start")
 
+  console.log("Connect to host:", process.env.POSTGRES_HOST)
+  console.log("Connect to db:", process.env.POSTGRES_DB)
+
   console.log("addModels V0_FEED_MODELS")
   await sequelize.addModels(V0_FEED_MODELS);
 
