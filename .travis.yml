@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 15.4.0
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed pre-test"
+
+# Scripts to be run such as test
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version
+  - docker build udagram_api .
+  - docker tag express_helloworld theresmith/udagram_api:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push theresmith/udagram_api:latest
