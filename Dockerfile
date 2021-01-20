@@ -30,5 +30,4 @@ EXPOSE 8080
 EXPOSE 5432
 #
 # Start the App
-RUN ["sh", "/usr/src/app/src/set_env.sh"]
 CMD ["node", "/usr/src/app/src/www/server.js"]
