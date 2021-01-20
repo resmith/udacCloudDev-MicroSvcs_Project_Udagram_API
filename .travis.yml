@@ -15,9 +15,8 @@ before_script:
 
 script:
   - docker --version
-  - docker build -t udagram_api .
-  - docker tag udagram_api theresmith/udagram_api:latest
+  - docker build -t theresmith/udagram_api .
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push theresmith/udagram_api:latest
+  - docker push theresmith/udagram_api
