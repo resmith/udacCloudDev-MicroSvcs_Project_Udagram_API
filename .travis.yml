@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version
-  - docker build udagram_api .
+  - docker build -t udagram_api .
   - docker tag udagram_api theresmith/udagram_api:latest
 
 after_success:
